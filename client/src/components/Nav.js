@@ -10,6 +10,8 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
+import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader } from 'react-pro-sidebar';
+import 'react-pro-sidebar/dist/css/styles.css';
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
@@ -20,15 +22,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: "1",
     cursor: "pointer",
   },
+  nav:{
+    height: "100vh",
+    float: "left",
+  },
   link: {
-    textDecoration: "none",
-    color: "white",
-    fontSize: "20px",
-    marginLeft: theme.spacing(20),
-    "&:hover": {
-      color: "yellow",
-      borderBottom: "1px solid white",
-    },
+
   },
 }));
 
@@ -38,27 +37,16 @@ function Navbar() {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="static">
-      <CssBaseline />
-      <Toolbar>
-        <Typography variant="h4" className={classes.logo}>
-          DASH App
-          
-        </Typography>
-        {isMobile ? (
-          <DrawerComponent />
-        ) : (
-          <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
-              Home
-            </Link>
-            <Link to="/bow" className={classes.link}>
-              BOW
-            </Link>
-          </div>
-        )}
-      </Toolbar>
-    </AppBar>
+    <ProSidebar className={classes.nav}>
+      <SidebarHeader>
+      DASH App
+      </SidebarHeader>
+    <Menu iconShape="square">
+      <MenuItem >Home <Link to="/" className={classes.link}/></MenuItem>
+      <MenuItem >Bag of Words <Link to="/bow" className={classes.link}/></MenuItem>
+      <MenuItem >Parts of SpeechLink <Link to="/pos" className={classes.link}/></MenuItem>
+    </Menu>
+  </ProSidebar>
   );
 }
 export default Navbar;

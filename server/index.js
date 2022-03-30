@@ -79,7 +79,10 @@ function aws_bow(str, res){
   var lambda = new AWS.Lambda();
   var params = {
     FunctionName: 'bag_of_words',/* required */
-    Payload: JSON.stringify(str)
+    Payload: JSON.stringify({
+      "text": str,
+      "option": "none"
+    })
   };
   lambda.invoke(params, function(err, data) {
     if (err) console.log(err, err.stack); // an error occurred

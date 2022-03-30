@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       items: ['x'],
       moreItemsLoading: false,
-      hasNextPage: true
+      hasNextPage: true,
+      textToPaste: ""
     };
   }
   render(){
@@ -22,6 +23,7 @@ class App extends Component {
         <Routes>
           <Route exact path="/" element={<Homepage />} /> 
           <Route path="/bow" element={<BOW />} /> 
+          <Route path="/pos" element={<iframe style={{width: "calc(100% - 273px)", float: "right"}} src="https://corenlp.run" className="coreNLP"></iframe>} /> 
         </Routes>
       </Router>
   );

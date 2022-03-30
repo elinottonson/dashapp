@@ -5,12 +5,12 @@ import '../styles/collapse.css';
 
 function Get_homepage() {
 return (
-    <div className="homepage">
-        <BOWcollapse />
-        <iframe src="https://corenlp.run" className="coreNLP"></iframe>
+    <div>
+        <iframe className='homepage' src='https://elinottonson.github.io/dashapp/client/src/components/homeHTML.html' />
     </div>
     );
 }
+
 function Homepage() {
     return (
         <Get_homepage/>

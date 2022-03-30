@@ -3,7 +3,9 @@ import ExportBOW from './ExportBOW';
 import ImportFiles from '../importFile';
 import ShowBOW from './ShowBOW';
 import Wordcloud from './Wordcloud';
-
+import {
+    makeStyles,
+  } from "@material-ui/core";
 
 class BOW extends React.Component{
     constructor(props) {
@@ -14,7 +16,6 @@ class BOW extends React.Component{
             option: ""
         }
     }
-    
     handler(listBOW, action) {
         if(action==1){
             this.state.list = listBOW;
@@ -27,7 +28,7 @@ class BOW extends React.Component{
     }
     render(){
         return (
-            <div className='bow'>
+            <div style={{width: "calc(100% - 270px)", float: "right"}}>
                 <ImportFiles handler = {this.handler}/>
                 <div id="loader" style={{display:"none"}}>Loading...</div>
                 <ShowBOW handler = {this.handler}/>

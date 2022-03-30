@@ -11,8 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tensorflow/tfjs": "^3.11.0",
-    "@tensorflow/tfjs-node": "^3.11.0",
     "aws-sdk": "^2.1045.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -20,6 +18,10 @@
     "natural": "^5.1.11",
     "nltk": "0.0.1",
     "python-shell": "^3.0.1",
+    "react-pro-sidebar": "^0.7.1",
     "react-window-infinite-loader": "^1.0.7"
+  },
+  "devDependencies": {
+    "html-loader": "^3.1.0"
   }
 }
