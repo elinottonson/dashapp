@@ -21,4 +21,4 @@ jobs:
         env:
             CI: false
       - name: Deploy app build to S3 bucket
-        run: aws s3 sync ./client/build s3://dashapp.umass --delete
+        run: aws s3 sync ./server/build s3://dashapp.umass --delete
