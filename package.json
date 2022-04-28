@@ -2,7 +2,6 @@
   "name": "dashapp",
   "version": "1.0.0",
   "description": "",
-  "main": "./client/src/index.js",
   "scripts": {
     "start": "cd server && node index.js",
     "heroku-postbuild": "cd server && npm install && cd ../client && npm install && npm run build && mv -v -f build ../server"
