@@ -18,5 +18,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Build React App
         run: cd server && npm install && cd ../client && npm install && npm run build && mv -v -f build ../server
+        env:
+            CI: false
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./dist/ s3://dashapp.umass --delete
