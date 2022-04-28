@@ -20,5 +20,8 @@ jobs:
         run: cd server && npm install && cd ../client && npm install && npm run build && mv -v -f build ../server
         env:
             CI: false
+            akid: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            secret: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./server/build s3://dashapp.umass --delete
