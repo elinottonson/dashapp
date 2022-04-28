@@ -15,7 +15,12 @@ app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb'}));
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-app.use(cors());
+const corsOptions ={
+  origin: 'http://localhost:'+PORT, 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 app.use('/', router)
 var natural = require('natural');
