@@ -59,8 +59,16 @@
 }
 
 .homepage{
-  width: calc(100% - 273px);
+  width: calc(100% - 203px);
   height: 100vh;
   float: right;
+}
+
+.pro-menu-item{
+  font-size: 25px !important;
+}
+
+.pro-inner-item:focus{
+  color:orange !important;
 }
 

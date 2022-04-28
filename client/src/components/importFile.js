@@ -7,16 +7,52 @@ import styled from 'styled-components';
 function ImportFiles(props){
       const onDrop = useCallback((acceptedFiles) => {
         acceptedFiles.forEach((file) => {
+          props.handler([], 3);
           const reader = new FileReader()
-    
+          var tokenizer = props.handler([], 2).tokenizer
+
+          var punct_option = props.handler([], 2).punct
+          var punct = 'n'
+          if(punct_option){
+            punct = 'y'
+          }
+          else{
+            punct = 'n'
+          }
+
+          var stop_option = props.handler([], 2).stop
+          var stop = 'n'
+          if(stop_option){
+            stop = 'y'
+          }
+          else{
+            stop = 'n'
+          }
+
+          var cap_option = props.handler([], 2).cap
+          var cap = 'n'
+          if(cap_option){
+            cap = 'y'
+          }
+          else{
+            cap = 'n'
+          }
+
           reader.onabort = () => console.log('file reading was aborted')
           reader.onerror = () => console.log('file reading has failed')
           reader.onload = () => {
             const binaryStr = reader.result
             console.log(binaryStr)
             const loader = document.querySelector('#loader')
-            loader.style.display = 'block'
-            axios.post('http://localhost:3001/getBOW', {'text':(binaryStr.toString())}).then((res) => { 
+            console.log(punct)
+            axios.post('http://localhost:3001/getBOW', 
+            {
+              'text':(binaryStr.toString()),
+              'tokenizer':(tokenizer.toString()), 
+              'cap':(cap.toString()), 
+              'stop':(stop.toString()),
+              'punct':(punct.toString())
+            }).then((res) => { 
               var sortable=[];
               for(var key in res.data)
                 if(res.data.hasOwnProperty(key))
@@ -31,7 +67,7 @@ function ImportFiles(props){
               });
               console.log(sortable);
               props.handler(sortable, 1)
-              loader.style.display = 'none'
+              props.handler([], 2).loading = false
             }).catch((err) => console.log(err));
           }
           reader.readAsText(file)

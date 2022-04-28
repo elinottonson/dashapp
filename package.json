@@ -18,10 +18,13 @@
     "natural": "^5.1.11",
     "nltk": "0.0.1",
     "python-shell": "^3.0.1",
+    "react-loading-overlay": "^1.0.1",
     "react-pro-sidebar": "^0.7.1",
+    "react-switch": "^6.0.0",
     "react-window-infinite-loader": "^1.0.7"
   },
   "devDependencies": {
-    "html-loader": "^3.1.0"
+    "html-loader": "^3.1.0",
+    "sass": "^1.51.0"
   }
 }

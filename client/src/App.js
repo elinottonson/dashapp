@@ -23,7 +23,8 @@ class App extends Component {
         <Routes>
           <Route exact path="/" element={<Homepage />} /> 
           <Route path="/bow" element={<BOW />} /> 
-          <Route path="/pos" element={<iframe style={{width: "calc(100% - 273px)", float: "right"}} src="https://corenlp.run" className="coreNLP"></iframe>} /> 
+          <Route path="/pos" element={<iframe style={{width: "calc(100% - 203px)", float: "right"}} src="https://corenlp.run" className="coreNLP"></iframe>} /> 
+          <Route path="/cloud" element={<a href="https://nlpcloud.io" target="_blank">NLPCloud</a>} /> 
         </Routes>
       </Router>
   );

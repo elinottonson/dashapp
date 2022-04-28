@@ -3,7 +3,7 @@ import {PaginatedList} from 'react-paginated-list';
 
 
 function bowList(props) {
-    var listForShow = props.handler([], 2)
+    var listForShow = props.handler([], 2).list
     var itemCount = listForShow.length;
     const listItems = listForShow.map((d) => <li>{d[0]} : {d[1]}</li>);
     return (

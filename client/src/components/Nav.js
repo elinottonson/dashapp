@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
+import '../styles/custom.scss';
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
@@ -19,16 +20,23 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   logo: {
-    flexGrow: "1",
+
     cursor: "pointer",
   },
   nav:{
     height: "100vh",
     float: "left",
-  },
-  link: {
+    background: "#773585",
 
   },
+  link: {
+  },
+  navitems:{
+    position: "absolute",
+    top: "50%",
+    transform: "translate(0, -50%)",
+    padding: "10px",
+  }
 }));
 
 function Navbar() {
@@ -37,14 +45,17 @@ function Navbar() {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <ProSidebar className={classes.nav}>
-      <SidebarHeader>
+    <ProSidebar styles = {{background: "#773585"}} className={classes.nav}>
+      <SidebarHeader style={{"font-size":"25px", "padding":"10px"}}>
       DASH App
       </SidebarHeader>
-    <Menu iconShape="square">
-      <MenuItem >Home <Link to="/" className={classes.link}/></MenuItem>
-      <MenuItem >Bag of Words <Link to="/bow" className={classes.link}/></MenuItem>
-      <MenuItem >Parts of SpeechLink <Link to="/pos" className={classes.link}/></MenuItem>
+    <Menu className={classes.navitems} iconShape="square">
+      <MenuItem >Home <Link to="/"   className={classes.link}/></MenuItem>
+      <MenuItem >Learn It <Link to="/bow" className={classes.link}/></MenuItem>
+      <SubMenu title="Use It" >
+        <MenuItem >CoreNLP <Link to="/pos"   className={classes.link}/></MenuItem>
+        <MenuItem >NLPCloud<Link to="/cloud" className={classes.link}/></MenuItem>
+      </SubMenu>
     </Menu>
   </ProSidebar>
   );

@@ -3,7 +3,7 @@ import { CSVLink, CSVDownload } from "react-csv";
 
 
 function ExportBOW(props) {
-    var listForExport = props.handler([], 2)   
+    var listForExport = props.handler([], 2).list   
     return (
         <div className='export'>
             <CSVLink 
