@@ -45,7 +45,7 @@ function ImportFiles(props){
             console.log(binaryStr)
             const loader = document.querySelector('#loader')
             console.log(punct)
-            axios.post('http://localhost:3001/getBOW', 
+            axios.post('https://localhost:3001/getBOW', 
             {
               'text':(binaryStr.toString()),
               'tokenizer':(tokenizer.toString()), 
