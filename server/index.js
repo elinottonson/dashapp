@@ -16,6 +16,7 @@ app.use(express.urlencoded({limit: '50mb'}));
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.use(cors());
+
 app.use('/', router)
 var natural = require('natural');
 var tokenizer = new natural.WordPunctTokenizer();
@@ -52,6 +53,7 @@ function aws_bow(str, tokenizer, cap, stop, punct, res){
 }
 require('./tokenizer');
 router.post("/getBOW", jsonParser, (req, res) => {
+  res.append('Access-Control-Allow-Origin', ['*']);
   aws_bow(req.body.text, req.body.tokenizer, req.body.cap, req.body.stop, req.body.punct, res);
 });
 
