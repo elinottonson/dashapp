@@ -13,6 +13,7 @@ const app = express();
 var jsonParser = bodyParser.json()
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb'}));
+app.use(express.static(path.join(__dirname, 'build')));
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.use(cors());
