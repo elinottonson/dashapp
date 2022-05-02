@@ -15,12 +15,7 @@ app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb'}));
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-const corsOptions ={
-  origin: 'http://localhost:'+PORT, 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use('/', router)
 var natural = require('natural');
@@ -30,8 +25,13 @@ const { text } = require("body-parser");
 
 var AWS = require('aws-sdk');
 AWS.config.update({region:'us-east-1'});
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 var akid = process.env.akid
+console.log(akid)
 var secret = process.env.secret
+console.log(secret)
 
 function aws_bow(str, tokenizer, cap, stop, punct, res){
   AWS.config.update({accessKeyId: akid, secretAccessKey: secret});
@@ -56,9 +56,8 @@ function aws_bow(str, tokenizer, cap, stop, punct, res){
     }
   });
 }
-require('./tokenizer');
+
 router.post("/getBOW", jsonParser, (req, res) => {
-  res.append('Access-Control-Allow-Origin', ['*']);
   aws_bow(req.body.text, req.body.tokenizer, req.body.cap, req.body.stop, req.body.punct, res);
 });
 
