@@ -29,9 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 var akid = process.env.akid
-console.log(akid)
 var secret = process.env.secret
-console.log(secret)
 
 function aws_bow(str, tokenizer, cap, stop, punct, res){
   AWS.config.update({accessKeyId: akid, secretAccessKey: secret});
