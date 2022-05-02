@@ -18,9 +18,6 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.use(cors());
 
 app.use('/', router)
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'server', 'build', 'index.html'));
-});
 var natural = require('natural');
 var tokenizer = new natural.WordPunctTokenizer();
 var path = require('path');
@@ -64,6 +61,10 @@ router.post("/getBOW", jsonParser, (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
+});
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 
