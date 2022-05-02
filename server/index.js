@@ -19,7 +19,7 @@ app.use(cors());
 
 app.use('/', router)
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'server', 'build', 'index.html'));
 });
 var natural = require('natural');
 var tokenizer = new natural.WordPunctTokenizer();
