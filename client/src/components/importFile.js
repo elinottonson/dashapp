@@ -45,7 +45,7 @@ function ImportFiles(props){
             console.log(binaryStr)
             const loader = document.querySelector('#loader')
             console.log(punct)
-            axios.post('https://localhost:3001/getBOW', 
+            axios.post('/getBOW', 
             {
               'text':(binaryStr.toString()),
               'tokenizer':(tokenizer.toString()), 
@@ -68,7 +68,7 @@ function ImportFiles(props){
               console.log(sortable);
               props.handler(sortable, 1)
               props.handler([], 2).loading = false
-            }).catch((err) => console.log(err));
+            }).catch((err) => console.log(err.response.data));
           }
           reader.readAsText(file)
         })

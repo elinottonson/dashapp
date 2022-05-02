@@ -55,7 +55,7 @@ function aws_bow(str, tokenizer, cap, stop, punct, res){
   });
 }
 
-router.post("/getBOW", jsonParser, (req, res) => {
+app.post("/getBOW", (req, res) => {
   aws_bow(req.body.text, req.body.tokenizer, req.body.cap, req.body.stop, req.body.punct, res);
 });
 
