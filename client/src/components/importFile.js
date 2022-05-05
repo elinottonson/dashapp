@@ -79,12 +79,11 @@ function ImportFiles(props){
 
 
   return (
-    <section className="file-drop" ><p1 class="directions">2. Input a .txt File or Enter in Text:</p1>
+    <section className="file-drop" >
       <div className="drop_container" {...getRootProps({className: 'dropzone'})}>
         <input {...getInputProps()} />
         <p>Drag 'n' drop some files here, or click to select files</p>
       </div>
-      <div class="or">OR</div>
     </section>
   );
 }

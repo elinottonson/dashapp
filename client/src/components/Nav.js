@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     float: "left",
     background: "#773585",
+    position:"fixed"
 
   },
   link: {

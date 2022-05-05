@@ -97,7 +97,7 @@
   margin: 5px;
   padding: 10px;
   display: block;
-  height: 250px;
+  height: 150px;
   
 }
 
@@ -135,4 +135,29 @@
 }
 .learn{
   overflow: scroll;
+}
+.learning{
+  margin: 10px;
+  padding:2px;
+  border-style: solid;
+  border-color: #773585;
+  border-width: 4px;
+  border-radius: 5px;
+  overflow: scroll;
+}
+.pro-sidebar{
+  position: fixed;
+}
+.heading{
+  font-size: 25px;
+  font-weight: bold;
+  padding: 2px;
+  margin-bottom: 30px;
+  
+}
+.aboutFeature{
+  font-size: 18px;
+  padding: 2px;
+  margin-bottom: 30px;
+  margin-right: 6px;
 }

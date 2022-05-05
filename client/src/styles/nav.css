@@ -6,4 +6,6 @@
     margin-bottom: 50px;
     font-size: 20px;
     height:100vh;
+    overflow: visible;
+    position: fixed;
 }
