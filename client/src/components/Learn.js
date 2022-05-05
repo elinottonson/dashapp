@@ -13,7 +13,7 @@ class Learn extends React.Component{
                     <div style={{width:"30%", float:"left"}}>
                     <p1 class="directions">Bag of Words:</p1>
                     <div class="aboutFeature">
-                        A Bag of Words is a very important model to learn when starting to learn Natural Language Processing tools. It makes data out of a given text that can be manipulated by computers or interpreted by you. The simplist explanation is that it is a list of all words or tokens from your text and the count of how many times they appear.
+                        A Bag of Words is a very important model to learn when starting to learn Natural Language Processing tools. It makes data out of a given text that can be manipulated by computers or interpreted by you. The simplest explanation is that it is a list of all words or tokens from your text and the count of how many times they appear.
                         Put your own sentances in to the right to see a how to make a Bag of Words in Python. More information can be found <a href="https://towardsdatascience.com/a-simple-explanation-of-the-bag-of-words-model-b88fc4f4971">here</a>.
                     </div>
                     </div>
@@ -42,7 +42,7 @@ class Learn extends React.Component{
                     <div style={{width:"30%", float:"left"}}>
                     <p1 class="directions">Removing Stopwords:</p1>
                     <div class="aboutFeature">
-                        Stopwords are common words in a text that does not add much information to the text. We like to filter these words out when we process a text as it leaves tokens that are actually relevent to text. See how your text is manpulated by removing stopwords to get a better idea of the types of words that aren't relevent to your text. More information can be found <a href="https://towardsdatascience.com/text-pre-processing-stop-words-removal-using-different-libraries-f20bac19929a">here</a>.
+                        Stopwords are common words in a text that do not add much information to the text. We like to filter these words out when we process a text as it leaves tokens that are actually relevent to text. See how your text is manpulated by removing stopwords to get a better idea of the types of words that aren't relevent to your text. More information can be found <a href="https://towardsdatascience.com/text-pre-processing-stop-words-removal-using-different-libraries-f20bac19929a">here</a>.
                     </div>
                     </div>
                     <iframe src="https://trinket.io/embed/python/449c0942df" width="70%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
