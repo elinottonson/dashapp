@@ -32,8 +32,13 @@ function bow_options(props){
       }
       return (
           <div>
+            <p1 class="directions">1. Chose Your Bag of Words Options:</p1>
+            <div>
               Select Tokenizer:
-              <Select onChange= {(e)=> handleChange(e)} styles={customStyles} options={options} />
+              <div style={{width:"100%"}}>
+                <Select defaultValue={{value:'word',label:'Word'}} onChange= {(e)=> handleChange(e)} styles={customStyles} options={options} />
+              </div>
+            </div>
           </div>
       )
 }

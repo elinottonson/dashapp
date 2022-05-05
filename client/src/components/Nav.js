@@ -51,10 +51,13 @@ function Navbar() {
       </SidebarHeader>
     <Menu className={classes.navitems} iconShape="square">
       <MenuItem >Home <Link to="/"   className={classes.link}/></MenuItem>
-      <MenuItem >Learn It <Link to="/bow" className={classes.link}/></MenuItem>
+      <SubMenu title="Learn It">
+        <MenuItem >Foundation<Link to="/learn" className={classes.link}/></MenuItem>
+        <MenuItem >Bag of Words<Link to="/bow" className={classes.link}/></MenuItem>
+      </SubMenu>
       <SubMenu title="Use It" >
-        <MenuItem >CoreNLP <Link to="/pos"   className={classes.link}/></MenuItem>
-        <MenuItem >NLPCloud<Link to="/cloud" className={classes.link}/></MenuItem>
+        <MenuItem >CoreNLP<Link to="/pos" className={classes.link}/></MenuItem>
+        <MenuItem ><a href="https://nlpcloud.io/home/playground/">NLP Cloud</a></MenuItem>
       </SubMenu>
     </Menu>
   </ProSidebar>

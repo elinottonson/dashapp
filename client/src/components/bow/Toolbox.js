@@ -10,10 +10,10 @@ import {
 
 function get_toolbox(props){
       return (
-        <div style={{width: "100%"}}>
-            <Tokenizer handler = {props.handler}/>
+        <div class="toolbox" style={{width: "90%", borderColor: "purple"}}>
+            <Tokenizer  handler = {props.handler}/>
             <Punctuation handler = {props.handler}/>
-            <Stopwords handler = {props.handler}/>
+            <Stopwords  handler = {props.handler}/>
             <Cap handler = {props.handler}/>
         </div>
       )

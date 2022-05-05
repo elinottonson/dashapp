@@ -17,7 +17,7 @@ class Stopwords extends Component {
 
   render() {
     return (
-      <label>
+      <label style={{padding: '10px'}}>
            <span>Remove Stopwords</span>
             <Switch onChange={this.handleChange} checked={this.checked} />
         </label>

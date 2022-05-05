@@ -72,3 +72,67 @@
   color:orange !important;
 }
 
+.react-switch {
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.toolbox{
+  border-style: solid;
+  border-color: #773585;
+  border-width: 4px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  display:block;
+  align-items: center;
+  height: 200px;
+}
+
+.bow{
+  border-style: solid;
+  border-color: #773585;
+  border-width: 4px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  display: block;
+  height: 250px;
+  
+}
+
+.bowView{
+  border-style: solid;
+  border-color: #773585;
+  border-width: 4px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  display:block;
+  align-items: center;
+  overflow: scroll;
+  height: 500px;
+
+}
+
+.directions{
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.or{
+  text-align: center;
+}
+
+.text-input{
+  width: 100%;
+  height:90px;
+}
+.submit-button{
+  text-align: center;
+}
+.learn{
+  overflow: scroll;
+}

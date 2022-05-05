@@ -12,6 +12,7 @@ import {
     makeStyles,
   } from "@material-ui/core";
 import ToolBox from './Toolbox'
+import InputText from './InputText'
 
 class BOW extends React.Component{
     constructor(props) {
@@ -23,7 +24,8 @@ class BOW extends React.Component{
             punct: false,
             stop: false,
             cap: false,
-            loading: false
+            loading: false,
+            input: "",
         }
     }
     handler(listBOW, action) {
@@ -40,26 +42,35 @@ class BOW extends React.Component{
             this.state.loading = true
             this.forceUpdate();
         }
+        else if(action==4){
+            this.state.input = listBOW
+        }
+
     }
     render(){
         return (
-            <div style={{width: "calc(100% - 203px)"}}>
-                <div style={{width: "70%", float: "left"}}>
+            <div style={{width: "calc(100% - 210px)", float: "right"}}>
+                <div style={{width: "100%"}}>
+                        <ToolBox handler = {this.handler}/>
+                </div>
+                <div class="bow" style={{width: "90%"}}>
                     <LoadingOverlay
                         active={this.state.loading}
                         spinner
                         text='Tokenizing in the cloud...'
                         >
                         <ImportFiles handler = {this.handler}/>
-                        <ShowBOW handler = {this.handler}/>
                     </LoadingOverlay>
-                    <ExportBOW handler = {this.handler}/>
-                    </div>
-                {/* <Wordcloud handler = {this.handler}/> */}
-                <script src="https://gist.github.com/elinottonson/82cf68a63ddb6318e3c1c638a784151a.js"></script>
-                <div style={{width: "15%", float: "right"}}>
-                    <ToolBox handler = {this.handler}/>
                 </div>
+                 <div class="bowView" style={{width: "90%"}}>
+                 <p1 class="directions">3. View, Export, and Visualize your Bag of Words:</p1>
+                        <ShowBOW handler = {this.handler}/>
+                    <ExportBOW handler = {this.handler}/>
+                    <Wordcloud handler = {this.handler}/>
+                </div>
+                
+                
+                <script src="https://gist.github.com/elinottonson/82cf68a63ddb6318e3c1c638a784151a.js"></script>
             </div>
         )
     }

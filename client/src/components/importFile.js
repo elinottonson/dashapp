@@ -5,6 +5,7 @@ import axios from 'axios'
 import styled from 'styled-components';
 
 function ImportFiles(props){
+      var inputText = "";
       const onDrop = useCallback((acceptedFiles) => {
         acceptedFiles.forEach((file) => {
           props.handler([], 3);
@@ -76,14 +77,14 @@ function ImportFiles(props){
       }, [])
       const {getRootProps, getInputProps} = useDropzone({onDrop, accept: '.txt'})
 
+
   return (
-    <section className="file-drop">
+    <section className="file-drop" ><p1 class="directions">2. Input a .txt File or Enter in Text:</p1>
       <div className="drop_container" {...getRootProps({className: 'dropzone'})}>
         <input {...getInputProps()} />
         <p>Drag 'n' drop some files here, or click to select files</p>
       </div>
-      <div className='bow'>
-      </div>
+      <div class="or">OR</div>
     </section>
   );
 }

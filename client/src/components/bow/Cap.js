@@ -17,7 +17,7 @@ class Cap extends Component {
 
   render() {
     return (
-      <label>
+      <label style={{padding: '10px'}}>
            <span>Decapitilize Tokens</span>
             <Switch onChange={this.handleChange} checked={this.checked} />
         </label>

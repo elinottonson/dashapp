@@ -1,11 +1,20 @@
 import React from 'react';
-import ReactWordcloud from 'react-wordcloud';
+import {render} from 'react-dom'
+import WordCloud from 'react-d3-cloud';
 
 
 function Wordcloud(props) {
     var words = []
-    var listForCloud = props.handler([], 2)   
-    for(var i=0; i<listForCloud.length; i++){
+    var listForCloud = props.handler([], 2).list  
+    console.log("here") 
+    var wordcloudAmount = 0
+    if(listForCloud.length<=500){
+        wordcloudAmount = listForCloud.length
+    }
+    else{
+        wordcloudAmount = 500
+    }
+    for(var i=0; i<wordcloudAmount; i++){
         words.push({
             text: listForCloud[i][0],
             value: listForCloud[i][1],
@@ -22,15 +31,34 @@ function Wordcloud(props) {
         padding: 1,
         rotations: 3,
         rotationAngles: [0, 90],
-        scale: "sqrt",
         spiral: "archimedean",
         transitionDuration: 1000
       };
     return (
-        <div className='wordcloud'>
-            <ReactWordcloud options={options} words={words} />
+        <div className='wordcloud' styles={{width:"100%", float: "right"}}>
+             <p1 class="directions" >WordCloud:</p1>
+            <WordCloud data={words} width={300}
+    height={300}
+    font="Times"
+    fontStyle="italic"
+    fontWeight="bold"
+    fontSize={(word) => Math.log2(word.value) * 5}
+    spiral="rectangular"
+    rotate={(word) => word.value % 360}
+    padding={5}
+    random={Math.random}
+    onWordClick={(event, d) => {
+        window.open('https://www.google.com/search?q='+d.text+'', '_blank').focus();
+    }}
+    onWordMouseOver={(event, d) => {
+      console.log(`onWordMouseOver: ${d.text}`);
+    }}
+    onWordMouseOut={(event, d) => {
+      console.log(`onWordMouseOut: ${d.text}`);
+    }}/>
         </div>
     );
 }
+
 export default Wordcloud;
 

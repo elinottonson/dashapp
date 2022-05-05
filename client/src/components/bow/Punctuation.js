@@ -17,7 +17,7 @@ class Punctuation extends Component {
   render() {
     return (
       <label>
-           <span>Remove Punctuation</span>
+           <span style={{verticalAlign: "middle", padding: '10px'}}>Remove Punctuation</span>
             <Switch onChange={this.handleChange} checked={this.checked} />
         </label>
 
