@@ -36,7 +36,7 @@ function Wordcloud(props) {
       };
     return (
         <div className='wordcloud' styles={{width:"100%", float: "right"}}>
-             <p1 class="directions" >WordCloud:</p1>
+             <p1 class="directions" >WordCloud (click on a word to google it):</p1>
             <WordCloud data={words} width={300}
     height={300}
     font="Times"
