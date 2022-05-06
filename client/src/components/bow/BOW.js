@@ -54,7 +54,7 @@ class BOW extends React.Component{
                         <ToolBox handler = {this.handler}/>
                 </div>
                 <div class="bow" style={{width: "90%"}}>
-                <p1 class="directions">2. Input a .txt File or Enter in Text:</p1>
+                <p1 class="directions">2. Input a .txt File:</p1>
                     <LoadingOverlay
                         active={this.state.loading}
                         spinner
