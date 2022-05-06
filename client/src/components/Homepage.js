@@ -6,7 +6,7 @@ import '../styles/collapse.css';
 function Get_homepage() {
 return (
     <div>
-        <iframe className='homepage' src='https://elinottonson.github.io/dashapp/client/src/components/homeHTML.html' />
+        <iframe className='homepage' src='https://elinottonson.github.io/dash_app/homeHTML.html' />
     </div>
     );
 }
